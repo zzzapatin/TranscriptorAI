@@ -1,0 +1,10 @@
+*.mp3
+*.wav
+./venv/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+./.venv/
