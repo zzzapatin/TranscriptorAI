@@ -1,5 +1,15 @@
 import os
-HF_TOKEN = os.getenv("HF_TOKEN")
+import os
+
+def load_hf_token(path="hf_token.txt"):
+    try:
+        with open(path, "r") as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        print(f"⚠️ Token file not found at {path}")
+        return None
+
+HF_TOKEN = load_hf_token()
 
 # load pretrained pipeline
 from pyannote.audio import Pipeline
